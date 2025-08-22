@@ -1,0 +1,444 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+@font-face {
+    font-family: 'Agustin Texas';
+    src: url(../tipografia/Austin\ Texas.otf);
+}
+
+/* Header responsive */
+header {
+    display: flex;
+    padding: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+#logo {
+    flex-shrink: 0;
+}
+
+#logo img {
+    max-width: 200px;
+    height: auto;
+}
+
+#parrafo {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.texto-contenido {
+    margin-bottom: 30px;
+}
+
+#parrafo h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+#parrafo h4 {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Agustin Texas section */
+#agustin {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+#agustin h2 {
+    font-family: 'Agustin Texas', Arial, sans-serif;
+    background-color: white;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.5rem;
+}
+
+/* Social media icons */
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+#agustin a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background-color: gray;
+    border: 3px solid gray;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 1.8rem;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+#agustin a:hover {
+    background-color: #555;
+    border-color: #555;
+}
+/* Content sections */
+#cuerpo {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+#caja1, #caja2, #caja3 {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    gap: 20px;
+}
+
+#titulo {
+    flex: 1;
+}
+
+#titulo h2 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+#titulo h4 {
+    font-size: 1rem;
+    color: #ccc;
+    margin-bottom: 15px;
+}
+
+#linea {
+    width: 2px;
+    background-color: white;
+    height: 80px;
+    margin: 0 20px;
+    flex-shrink: 0;
+}
+
+#descripcion {
+    flex: 2;
+    padding-left: 20px;
+}
+
+#descripcion span {
+    font-weight: bold;
+    color: #fff;
+}
+
+/* Call to action */
+#negro {
+    text-align: center;
+    padding: 20px;
+    margin: 40px auto;
+    max-width: 800px;
+}
+
+.rojo {
+    color: red;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* Final section with form and image */
+#final {
+    display: flex;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+/* Form section with black background and white border */
+#formulario {
+    flex: 1;
+    background-color: black;
+    border: 2px solid white;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+#formulario h2 {
+    color: white;
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+/* Form styling */
+form {
+    width: 100%;
+}
+
+label[id="check"] {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    color: white;
+    font-size: 1rem;
+}
+
+label[id="check"] input[type="checkbox"] {
+    margin-right: 10px;
+    width: 18px;
+    height: 18px;
+}
+
+/* Text inputs in line */
+.input-row {
+    display: flex;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+input[type="text"], input[type="email"] {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: white;
+    color: black;
+}
+
+input[type="text"]::placeholder, input[type="email"]::placeholder {
+    color: #666;
+}
+
+/* Submit button */
+input[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    background-color: #666;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: not-allowed;
+    margin-top: 20px;
+}
+
+.rojo-warning {
+    color: red;
+    font-size: 0.9rem;
+    margin: 15px 0;
+    text-align: center;
+}
+
+/* Image section */
+#final img {
+    flex: 1;
+    max-width: 400px;
+    height: auto;
+    border-radius: 10px;
+}
+/* Mobile responsive */
+@media (max-width: 768px) {
+    body {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    /* Primera parte - Mobile Section 1 */
+    .mobile-section-1 {
+        background-color: black;
+        padding: 20px;
+        text-align: center;
+    }
+    
+    header {
+        flex-direction: column;
+        padding: 15px;
+        gap: 20px;
+        align-items: center;
+    }
+    
+    #logo img {
+        max-width: 150px;
+        margin-bottom: 20px;
+    }
+    
+    #parrafo {
+        align-items: center;
+        text-align: center;
+    }
+    
+    #parrafo h2 {
+        font-size: 1.5rem;
+        color: white;
+        margin-bottom: 15px;
+    }
+    
+    #parrafo h4 {
+        font-size: 1rem;
+        color: white;
+        line-height: 1.6;
+        margin-bottom: 30px;
+    }
+    
+    /* Austin Texas logo intermedio */
+    #agustin {
+        align-items: center;
+        margin: 30px 0;
+    }
+    
+    #agustin h2 {
+        background-color: white;
+        color: black;
+        padding: 15px 25px;
+        border-radius: 8px;
+        font-size: 1.3rem;
+        margin-bottom: 20px;
+    }
+    
+    #agustin a {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+        background-color: #333;
+        border: 2px solid #333;
+    }
+    
+    /* Primeras dos canciones en sección 1 */
+    #caja1, #caja2 {
+        flex-direction: column;
+        gap: 15px;
+        margin-bottom: 30px;
+        padding: 20px;
+        background-color: #111;
+        border-radius: 10px;
+    }
+    
+    #caja1 #titulo, #caja2 #titulo {
+        text-align: center;
+    }
+    
+    #caja1 #titulo h2, #caja2 #titulo h2 {
+        color: white;
+        font-size: 1.3rem;
+        margin-bottom: 5px;
+    }
+    
+    #caja1 #titulo h4, #caja2 #titulo h4 {
+        color: #ccc;
+        font-size: 0.9rem;
+        margin-bottom: 15px;
+    }
+    
+    #caja1 #descripcion, #caja2 #descripcion {
+        padding-left: 0;
+        text-align: center;
+        color: white;
+    }
+    
+    #linea {
+        display: none;
+    }
+    
+    /* Segunda parte - Mobile Section 2 */
+    .mobile-section-2 {
+        background-color: black;
+        padding: 20px;
+    }
+    
+    /* Tercera canción en sección 2 */
+    #caja3 {
+        flex-direction: column;
+        gap: 15px;
+        margin-bottom: 30px;
+        padding: 20px;
+        background-color: #111;
+        border-radius: 10px;
+        text-align: center;
+    }
+    
+    #caja3 #titulo h2 {
+        color: white;
+        font-size: 1.3rem;
+        margin-bottom: 5px;
+    }
+    
+    #caja3 #titulo h4 {
+        color: #ccc;
+        font-size: 0.9rem;
+        margin-bottom: 15px;
+    }
+    
+    #caja3 #descripcion {
+        padding-left: 0;
+        text-align: center;
+        color: white;
+    }
+    
+    /* Call to action con recuadro blanco */
+    #negro {
+        background-color: white;
+        color: black;
+        padding: 20px;
+        border-radius: 10px;
+        margin: 20px 0;
+        position: relative;
+        border: 2px solid #ddd;
+    }
+    
+    #negro .rojo {
+        color: red;
+        font-weight: bold;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+    
+    
+    
+    /* Formulario oculto inicialmente */
+    #final {
+        display: none;
+        flex-direction: column;
+        gap: 30px;
+        padding: 15px;
+        background-color: black;
+    }
+    
+    #final.show {
+        display: flex;
+    }
+    
+    #formulario {
+        order: 1;
+    }
+    
+    #final img {
+        display: none;
+    }
+    
+    /* Form inputs mobile */
+    .input-row {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    input[type="text"], input[type="email"] {
+        width: 100%;
+    }
+}

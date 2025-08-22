@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Document</title>
+
+  <!-- Hojas de estilo del sitio y de iconos -->
+  <link rel="stylesheet" href="style/queen.css"/>
+  <link rel="stylesheet" href="icomoon/style.css"/>
+</head>
+
+<body>
+  <!-- HEADER: logo + texto introductorio + autor/redes -->
+  <header>
+    <div id="logo">
+      <!-- Logo superior  -->
+      <img src="imagenes/logo-queen.jpeg" alt="Portada Best Of Queen"/>
+    </div>
+
+    <div id="parrafo">
+      <!-- Bloque de texto principal -->
+      <div class="texto-contenido">
+        <h2>La historia detrás de algunas de las mejores canciones de Queen</h2>
+        <h4>
+          Dos críticos musicales hacen un maratón escuchando las casi 200 canciones del grupo y eligen las mejores.
+          Por qué. Porque el reciente estreno de la película que cuenta su historia nos ha recordado lo grandes que son
+        </h4>
+      </div>
+
+      <!-- Autor + redes sociales -->
+      <div id="agustin">
+        <h2>Agustin Texas</h2>
+        <div class="social-icons">
+          <!-- Enlaces de redes  -->
+          <a href="#"><span class="icon-facebook2" aria-hidden="true"></span><span class="sr-only">Facebook</span></a>
+          <a href="#"><span class="icon-instagram" aria-hidden="true"></span><span class="sr-only">Instagram</span></a>
+          <a href="#"><span class="icon-youtube" aria-hidden="true"></span><span class="sr-only">YouTube</span></a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- CUERPO: tarjetas con canciones y descripciones -->
+  <div id="cuerpo">
+    <!-- Caja 1: Bohemian Rhapsody -->
+    <div id="caja1" class="caja">
+      <!-- ⚠️ Sugerencia: usa class="titulo" en vez de id repetido -->
+      <div id="titulo">
+        <h2>Bohemian Rhapsody</h2>
+        <h4>1975, del disco ‘A Night at the Opera’</h4>
+      </div>
+      <!-- Separador visual -->
+      <p id="linea">|</p>
+      <!-- Texto descriptivo -->
+      <p id="descripcion">
+        <span>Por qué es tan buena.</span> Cuatro rockeros ingleses sonando como un coro góspel de cien personas.
+        Y, al mismo tiempo, 100% Queen.
+      </p>
+    </div>
+
+    <!-- Caja 2: I Want to Break Free -->
+    <div id="caja2" class="caja">
+      <div id="titulo">
+        <h2>I Want to Break Free</h2>
+        <h4>1984, incluida en el disco ‘The Works’</h4>
+      </div>
+      <p id="linea">|</p>
+      <p id="descripcion">
+        <span>Por qué es tan buena.</span> Si Queen vivieron una segunda edad dorada en los ochenta fue por temas como este.
+      </p>
+    </div>
+
+    <!-- Caja 3: Somebody to Love -->
+    <div id="caja3" class="caja">
+      <div id="titulo">
+        <h2>Somebody to Love</h2>
+        <h4>1976, incluida en el disco ‘A Day at The Races’</h4>
+      </div>
+      <p id="linea">|</p>
+      <p id="descripcion">
+        <span>Por qué es tan buena.</span>
+        Hicieron volar por los aires la estructura clásica de rock (estrofas y un estribillo que se repite) y se las
+        arreglaron para insertar seis canciones en una. Tiene partes de ópera. Cascadas de voces. Una introducción a
+        capella. Referencias a Galileo y Fígaro. La letra es misteriosa y fascinante. Y el solo de guitarra posee vida propia.
+      </p>
+    </div>
+  </div>
+
+  <!-- CTA: al pulsar se muestra el formulario y se hace scroll hacia él -->
+  <p id="negro">
+    <span class="rojo" role="button" tabindex="0" onclick="showForm()" onkeypress="if(event.key==='Enter'){showForm()}">
+      Pulsa aquí
+    </span>
+    para rellenar el formulario que te dará acceso al sorteo para un concierto de Queen
+    <div class="arrow-container"><!-- Flecha decorativa en CSS --></div>
+  </p>
+
+  <!-- Sección final: formulario + imagen en dos columnas  -->
+  <div id="final">
+    <!-- Formulario de votación -->
+    <div id="formulario">
+      <h2>Vota tu cancion favorita</h2>
+
+      <!-- action apunta al backend PHP que recibirá los datos -->
+      <form action="php/queen.php" method="post">
+        <!-- Opciones de canciones  -->
+        <!-- ⚠️ Sugerencia: podrías usar name="canciones[]" y value="bohemian" para recibir un array -->
+        <label id="check" for="bohemian">
+          <input type="checkbox" name="bohemian" id="bohemian" />
+          Bohemian Rhapsody
+        </label>
+
+        <label id="check" for="iwant">
+          <input type="checkbox" name="iwant" id="iwant" />
+          I Want to Break Free
+        </label>
+
+        <label id="check" for="Somebody">
+          <input type="checkbox" name="Somebody" id="Somebody" />
+          Somebody to Love
+        </label>
+
+        <!-- Fila con nombre y correo; ambos requeridos -->
+        <div class="input-row">
+          <input type="text" name="nombre" id="nombre" placeholder="Nombre*" required />
+          <input type="email" name="email" id="email" placeholder="Correo Electrónico*" required />
+        </div>
+
+        <!-- Aceptación de políticas; required obliga a marcar -->
+        <label id="check" for="privacidad">
+          <input type="checkbox" name="privacidad" id="privacidad" required />
+          Acepto las políticas de privacidad
+        </label>
+
+        <!-- Aviso en rojo de obligatoriedad -->
+        <p class="rojo-warning">
+          * Este campo es obligatorio rellenarlo para poder enviar el formulario
+        </p>
+
+        <!-- Envío del formulario -->
+        <input type="submit" value="Enviar" />
+      </form>
+    </div>
+
+    <!-- Imagen a la derecha del formulario -->
+    <img src="imagenes/img-queen.jpeg" alt="Queen en concierto, fotografía en blanco y negro"/>
+  </div>
+
+  <!-- JS mínimo: muestra la sección #final y hace scroll suave -->
+  <script>
+    function showForm() {
+      const finalSection = document.getElementById('final');
+      // Añade una clase que tu CSS usará para convertir #final de oculto a visible
+      finalSection.classList.add('show');
+      // Desplaza la vista hasta el formulario
+      finalSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
